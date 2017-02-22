@@ -3,7 +3,7 @@ ansible-sudoers
 
 This role manage sudoers
 
-[![Ansible Galaxy](https://img.shields.io/ansible/role/xxxxx.svg)](https://galaxy.ansible.com/salamachinas/sudoers/)
+[![Ansible Galaxy](https://img.shields.io/ansible/role/15785.svg)](https://galaxy.ansible.com/salamachinas/sudoers/)
 
 Requirements
 ------------
