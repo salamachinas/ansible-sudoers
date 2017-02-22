@@ -1,0 +1,9 @@
+FROM williamyeh/ansible:centos7
+
+WORKDIR /tmp
+COPY  .  /tmp/ansible-sudoers
+
+RUN echo 127.0.0.1 > inventory
+RUN yum install -y sudo
+
+RUN ansible-playbook -i inventory ansible-sudoers/tests/provision.yml --connection=local --sudo

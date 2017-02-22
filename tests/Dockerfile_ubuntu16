@@ -1,0 +1,9 @@
+FROM williamyeh/ansible:ubuntu16.04
+
+WORKDIR /tmp
+COPY  .  /tmp/ansible-sudoers
+
+RUN echo 127.0.0.1 > inventory
+RUN apt-get update &&  apt-get install -y sudo
+
+RUN ansible-playbook -i inventory ansible-sudoers/tests/provision.yml --connection=local --sudo

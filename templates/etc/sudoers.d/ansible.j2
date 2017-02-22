@@ -1,0 +1,3 @@
+{%- for item in promoted -%}
+    {{ item.name }} ALL=({{ item.promote }}) {{ "NOPASSWD: " if item.nopasswd | default(false) else "" }}ALL
+{% endfor %}

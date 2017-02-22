@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+    - role: ansible-sudoers
+  vars:
+    promoted:
+      - {name: ansible, promote: ALL, nopasswd: true}
+      - {name: example, promote: app, nopasswd: false}
