@@ -1,3 +1,15 @@
 ---
+- name: install sudo
+  package:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+    - sudo
+
 - name: creating sudoers configuration
-  template: src="etc/sudoers.d/ansible.j2" dest="/etc/sudoers.d/ansible" owner=root group=root mode=0440
+  template:
+    src: etc/sudoers.d/ansible.j2
+    dest: /etc/sudoers.d/ansible
+    owner: root
+    group: root
+    mode: 0440
